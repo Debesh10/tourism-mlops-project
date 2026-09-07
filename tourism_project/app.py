@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import joblib
@@ -10,7 +11,7 @@ st.set_page_config(
 )
 
 # Load trained model
-MODEL_PATH = "tourism_model.pkl"
+MODEL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tourism_model.pkl")
 model = joblib.load(MODEL_PATH)
 
 # Title
